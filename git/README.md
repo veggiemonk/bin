@@ -7,7 +7,12 @@ Executes git with arguments listed in the Action's `args`.
 ```workflow
 action "Shell" {
   uses = "actions/bin/git@master"
-  args = ["status"]
+  args = [ "status" ]
+  secrets = [ "GITHUB_TOKEN" ]
+  env = {
+    "GIT_USERNAME" = "Al Gore-Rythim"
+    "GIT_EMAIL"    = "alex.blaine@layder.io"
+  }
 }
 ```
 
